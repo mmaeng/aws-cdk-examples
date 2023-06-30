@@ -51,7 +51,7 @@ jobs:
 
               typescript)
                 echo "TypeScript"
-                docker run --rm --net=host -t -v $PWD:$PWD -w $PWD jsii/superchain:1-buster-slim-node18 /bin/bash -c "scripts/build-typescript.sh $path2"
+                docker run --rm --net=host -t -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:$PWD -w $PWD jsii/superchain:1-buster-slim-node18 /bin/bash -c "scripts/build-typescript.sh $path2"
                 ;;
 
               *)
